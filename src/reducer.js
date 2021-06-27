@@ -23,7 +23,7 @@ const reducer = (state = {}, action) => {
         case 'UPDATE-USER':
             console.log(state[action.payload.cpf]);
             if (21 == state.cpf) console.log('aewwwww');
-            // if (action.payload.cpf == state.cpf) console.log('aewwwww');
+            // if (action.payload.cpf == state.cpf) console.log('aewwwwwww');
             // return {
             //     ...state,
             //     [action.payload.cpf]: { ...action.payload },
