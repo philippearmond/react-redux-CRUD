@@ -1,0 +1,43 @@
+#Table {
+    border-collapse: collapse;
+    margin: 32px 4px;
+
+    thead {
+        th {
+            border-bottom: 1px solid black;
+            color: #063254;
+            font-size: 16px;
+            padding-left: 8px;
+            text-align: left;
+        }
+
+        .table-head-large {
+            min-width: 250px;
+        }
+
+        .table-head-medium {
+            min-width: 180px;
+        }
+
+        .table-head-low {
+            min-width: 160px;
+        }
+
+        .table-head-very-low {
+            min-width: 120px;
+        }
+    }
+
+    tbody {
+        tr {
+            &:hover {
+                background-color: #ecf5f6;
+            }
+            td {
+                color: #063254;
+                font-size: 14px;
+                padding: 16px 0 16px 8px;
+            }
+        }
+    }
+}
