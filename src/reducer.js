@@ -21,14 +21,24 @@ const reducer = (state = {}, action) => {
             };
 
         case 'UPDATE-USER':
-            console.log(state[action.payload.cpf]);
-            if (21 == state.cpf) console.log('aewwwww');
-            // if (action.payload.cpf == state.cpf) console.log('aewwwwwww');
-            // return {
-            //     ...state,
-            //     [action.payload.cpf]: { ...action.payload },
-            // };
-            return state;
+            console.log(action.payload);
+            // const calculatedIR = getCalculatedIR(userDataUpdated);
+            //abaixo só está funcionado estaticamente, preciso passar a route pra inputar os dados a atualizar
+            return {
+                ...state,
+                [action.payload.cpf]: {
+                    name: 'usuário alterado',
+                    cpf: '123456',
+                    salary: '2,5k',
+                    pensionDiscount: '12',
+                    dependentsQuantity: '1',
+                    irrf: '123456',
+                },
+            };
+
+        case 'REMOVE-USER':
+            delete state[action.payload.cpf];
+            return { ...state };
 
         default:
             return state;

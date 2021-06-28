@@ -15,6 +15,18 @@ const UserList = (props) => {
 
     return (
         <div id="TableContainer">
+            <header>
+                <h1>
+                    Cadastre-se para saber o
+                    <br />
+                    valor de desconto do
+                    <br />
+                    seu Imposto de Renda
+                </h1>
+                <h4>
+                    OBS: Remova ou edite apenas usuários cadastrados por você!!
+                </h4>
+            </header>
             <Table userUpdated={data} />
             <div className="register-cta-wrapper">
                 <Button route="/cadastrar">Cadastrar</Button>

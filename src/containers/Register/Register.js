@@ -30,7 +30,7 @@ const Register = () => {
             value: '',
             valid: false,
         },
-        dependentsNumber: {
+        dependentsQuantity: {
             label: 'Número de dependentes',
             inputType: 'number',
             value: '',
@@ -82,6 +82,17 @@ const Register = () => {
 
     return (
         <div id="RegisterContainer">
+            <header>
+                <h1>
+                    Preencha todos os campos
+                    <br />
+                    para obter o valor de
+                    <br />
+                    desconto do seu
+                    <br />
+                    Imposto de Renda
+                </h1>
+            </header>
             <fieldset>
                 {input}
                 <div className="register-cta-wrapper">

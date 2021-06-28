@@ -4,16 +4,22 @@ import './BtnCustom.scss';
 
 import { connect } from 'react-redux';
 import { onEdit } from '../../../../actions';
+import { onRemove } from '../../../../actions';
 
 const BtnCustom = (props) => {
     const classes = ['btn-edit'];
-    props.typeRemove ? classes.push('btn-remove') : null;
+    let clickEvent = props.onEditClick;
+
+    if (props.typeRemove) {
+        classes.push('btn-remove');
+        clickEvent = props.onRemoveClick;
+    }
 
     return (
         <button
             id="BtnCustom"
             className={classes.join(' ')}
-            onClick={() => props.onEditClick(props.data)}
+            onClick={() => clickEvent(props.data)}
         >
             {props.children}
         </button>
@@ -23,6 +29,9 @@ const BtnCustom = (props) => {
 const mapDispatchToProps = (dispatch) => ({
     onEditClick: (user) => {
         dispatch(onEdit(user));
+    },
+    onRemoveClick: (user) => {
+        dispatch(onRemove(user));
     },
 });
 
