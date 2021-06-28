@@ -3,7 +3,7 @@ import React from 'react';
 import BtnCustom from '../UI/Button/Custom/BtnCustom';
 import './Table.scss';
 
-const Table = ({ userUpdated }) => {
+const Table = (props) => {
     const tableHead = (
         <tr>
             <th className="table-head-large">Nome</th>
@@ -17,14 +17,14 @@ const Table = ({ userUpdated }) => {
         </tr>
     );
 
-    const tableContent = userUpdated.map((user) => {
+    const tableContent = props.userUpdated.map((user) => {
         return (
             <tr key={user.cpf}>
                 <td>{user.nome || user.name} </td>
                 <td>{user.cpf} </td>
                 <td>{user.salario || user.salary} </td>
                 <td>{user.desconto || user.pensionDiscount} </td>
-                <td>{user.dependentes || user.dependentsNumber}</td>
+                <td>{user.dependentes || user.dependentsQuantity}</td>
                 <td>{user.desconto || user.irrf} </td>
                 <td>
                     <BtnCustom data={user} typeEdit>
@@ -32,7 +32,9 @@ const Table = ({ userUpdated }) => {
                     </BtnCustom>
                 </td>
                 <td>
-                    <BtnCustom typeRemove>Excluir</BtnCustom>
+                    <BtnCustom data={user} typeRemove>
+                        Excluir
+                    </BtnCustom>
                 </td>
             </tr>
         );
